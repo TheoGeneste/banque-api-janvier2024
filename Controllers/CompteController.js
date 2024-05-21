@@ -20,6 +20,16 @@ class CompteController {
             result.json({error : 'Une erreur est surevnue lors de la récupération du compte'});
         }
     }
+
+    async addCompte(request, result){
+        try {
+            const compte = await CompteService.addCompte(request.body);
+            result.json(compte);
+        } catch (error) {
+            result.status(500);
+            result.json({error : 'Une erreur est surevnue lors de l\'ajout du compte'});
+        }
+    }
 }
 
 module.exports = new CompteController();

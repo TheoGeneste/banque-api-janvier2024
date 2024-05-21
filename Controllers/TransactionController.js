@@ -18,7 +18,17 @@ class TransactionController {
             result.json(transaction);
         } catch (error) {
             result.status(500);
-            result.json({error : "Une erreur est survenue lors de la récupération de la transaction"})
+            result.json({error : "Une erreur est survenue lors de la récupération de la transaction"});
+        }
+    }
+
+    async addTransaction(request,result){
+        try {
+            const transaction = await TransactionService.addTransaction(request.body);
+            result.json(transaction);
+        } catch (error) {
+            result.status(500);
+            result.json({error : "Une erreur est survenue lors de l'insertion de la transaction"});
         }
     }
 }
