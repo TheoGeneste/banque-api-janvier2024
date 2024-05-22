@@ -40,6 +40,10 @@ Transaction.init({
             key: "CO_ID"
         }
     },
+    TR_Montant : {
+        type : DataTypes.FLOAT,
+        allowNull : true
+    }
 } , {
     sequelize,
     modelName : "Transaction",

@@ -12,6 +12,19 @@ class TransactionService{
     async addTransaction(transaction){
         return await Transaction.create(transaction);
     }
+
+    async removeTransaction(transactionID){
+        return await Transaction.destroy({
+            where : {TR_ID : transactionID}
+        })
+    }
+
+    async updateTransaction(transactionID, transaction){
+        return await Transaction.update(transaction, {
+            where : {TR_ID : transactionID},
+            individualHooks : true
+        })
+    }
 }
 
 module.exports = new TransactionService();
