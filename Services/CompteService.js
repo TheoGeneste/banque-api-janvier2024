@@ -2,7 +2,7 @@ const Compte = require("../Models/Compte");
 
 class CompteService {
     async getAllCompte(){
-        return await Compte.findAll();
+        return await Compte.findAll({include : 'client'});
     }
 
     async getCompteByID(compteID){

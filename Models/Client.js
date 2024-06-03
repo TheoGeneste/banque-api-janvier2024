@@ -70,5 +70,6 @@ Client.init({
 })
 
 Client.hasMany(Compte, { as : "comptes", foreignKey : "FK_CLIENT"})
+Compte.belongsTo(Client, {as : "client", foreignKey : 'FK_CLIENT'})
 
 module.exports = Client;

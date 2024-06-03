@@ -42,7 +42,7 @@ Transaction.init({
     },
     TR_Montant : {
         type : DataTypes.FLOAT,
-        allowNull : true
+        allowNull : true    
     }
 } , {
     sequelize,
